@@ -10,7 +10,6 @@ public class Main {
         String input = br.readLine();
         for (int i = 0; i < input.length(); i++) {
             String parsingChar= String.valueOf(input.charAt(i));
-
             ABC.put(parsingChar, ABC.getOrDefault(parsingChar, 0) + 1);
         }
 
