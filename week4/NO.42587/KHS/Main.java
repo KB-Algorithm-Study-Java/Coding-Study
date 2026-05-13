@@ -1,33 +1,23 @@
 import java.util.*;
 
 class Solution {
-    public int[] solution(int[] prices) {
-        List<Integer> list = new ArrayList<>();
-        Deque<Integer> deque = new ArrayDeque<Integer>();
-        int cnt = 0;
-
-
-        for(int i : prices) {
-            deque.offer(i);
+    public int solution(int[] priorities, int location) {
+        int answer = 0;
+        PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
+        for(int i : priorities) {
+            queue.add(i);
         }
-        int size = deque.size();
-        for(int i = 0; i < size; i++) {
-            cnt = 0;
-            int n = deque.poll();
-            for(Integer num : deque) {
-                cnt++;
-                if(n > num) {
-                    break;
+
+        while(!queue.isEmpty()) {
+            for(int i = 0; i < priorities.length; i++) {
+                if(priorities[i] == queue.peek()) {
+                    queue.poll();
+                    answer++;
+                    if(i == location) {
+                        return answer;
+                    }
                 }
             }
-            list.add(cnt);
-        }
-
-
-        int[] answer = new int[list.size()];
-
-        for(int i = 0; i < list.size(); i++) {
-            answer[i] = list.get(i);
         }
 
         return answer;
