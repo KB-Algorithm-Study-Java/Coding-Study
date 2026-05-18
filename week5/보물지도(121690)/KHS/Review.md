@@ -1,4 +1,4 @@
-https://school.programmers.co.kr/learn/courses/30/lessons/81302
+https://school.programmers.co.kr/learn/courses/30/lessons/121690
 
 **접근**
 >
