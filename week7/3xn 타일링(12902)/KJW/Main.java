@@ -15,7 +15,6 @@ class Solution {
             for(int j = i - 4; j >= 0; j-=2) sum = (sum + dp[j] * 2) % 1000000007;
             dp[i] = (3 * dp[i-2] + sum) % 1000000007;
         }
-
         return dp[n];
     }
 }
